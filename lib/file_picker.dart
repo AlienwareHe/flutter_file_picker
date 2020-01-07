@@ -12,6 +12,7 @@ enum FileType {
 }
 
 class FilePicker {
+  
   static const MethodChannel _channel = const MethodChannel('file_picker');
   static const String _tag = 'FilePicker';
 
