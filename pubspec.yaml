@@ -1,6 +1,6 @@
 name: file_picker
 description: A package that allows you to use a native file explorer to pick single or multiple absolute file paths, with extension filtering support. !!based on https://github.com/miguelpruivo/plugins_flutter_file_picker, fix macos slecet file result is '/' problem.
-version: 0.0.1
+version: 0.0.2
 author:
 homepage:
 
