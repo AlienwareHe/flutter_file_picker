@@ -43,12 +43,11 @@ func fileDialog(title string, filter string) (string, error) {
 		}
 		return "", errors.Wrap(err, "failed to open file dialog")
 	}
-	
-	fmt.Printf("mac file picker selected file: "+string(output))
+
+	fmt.Printf("mac file picker selected file: " + string(output))
 	trimmedOutput := strings.TrimSpace(string(output))
 
-	pathParts := strings.Split(trimmedOutput, " ")
+	pathParts := strings.Split(trimmedOutput, ":")
 	path := string(filepath.Separator) + filepath.Join(pathParts[1:]...)
 	return path, nil
 }
-
