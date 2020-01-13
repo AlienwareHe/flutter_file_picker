@@ -47,7 +47,14 @@ func fileDialog(title string, filter string) (string, error) {
 	fmt.Printf("mac file picker selected file: " + string(output))
 	trimmedOutput := strings.TrimSpace(string(output))
 
-	pathParts := strings.Split(trimmedOutput, ":")
+	// 文件路径有两种分隔符方式，一种为/，一种为:
+	if strings.Contains(trimmedOutput, ":") {
+		pathParts := strings.Split(trimmedOutput, ":")
+		path := string(filepath.Separator) + filepath.Join(pathParts[1:]...)
+		return path, nil
+	}
+
+	pathParts := strings.Split(trimmedOutput, " ")
 	path := string(filepath.Separator) + filepath.Join(pathParts[1:]...)
 	return path, nil
 }
